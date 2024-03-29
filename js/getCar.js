@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const carBrandElement = document.getElementById("carBrand");
   const carNameElement = document.getElementById("carName");
   const carCarouselElement = document.getElementById("carCarousel_image");
+  const carMileageElement = document.getElementById("carMileages");
+  const carTransmissionElement = document.getElementById("carTransmission");
+  const carSeatsElement = document.getElementById("carSeats");
+  const carFuelElement = document.getElementById("carFuel");
+
 
   const carImage = {
     ferrari250GT: [
@@ -81,6 +86,62 @@ document.addEventListener("DOMContentLoaded", function () {
     carNameElement.innerHTML = "Car Name not available.";
   }
 
+  const carMileages = {
+    ferrari250GT: "280 km/h",
+    bmw3CSL: "300 km/h",
+    mclarenF1: "386 km/h",
+    vwBeetle: "229 km/h",
+    volvoP1800: "180 km/h",
+  };
+
+  if (carMileages[carId]) {
+    carMileageElement.innerHTML = carMileages[carId];
+  } else {
+    carMileageElement.innerHTML = "Car Top Speed not available.";
+  }
+
+  const carTransmission = {
+    ferrari250GT: "Manual",
+    bmw3CSL: "Manual",
+    mclarenF1: "Manual",
+    vwBeetle: "Manual",
+    volvoP1800: "Manual",
+  };
+
+  if (carTransmission[carId]) {
+    carTransmissionElement.innerHTML = carTransmission[carId];
+  } else {
+    carTransmissionElement.innerHTML = "Car Transmission not available.";
+  }
+
+  const carSeats = {
+    ferrari250GT: "4 Adults",
+    bmw3CSL: "2 Adults",
+    mclarenF1: "3 Adults",
+    vwBeetle: "4 Adults",
+    volvoP1800: "5 Adults",
+  };
+  
+  if (carSeats[carId]) {
+    carSeatsElement.innerHTML = carSeats[carId];
+  } else {
+    carSeatsElement.innerHTML = "Car Seats not available.";
+  }
+
+  const carFuel = {
+    ferrari250GT: "Petrol",
+    bmw3CSL: "Petrol",
+    mclarenF1: "Petrol",
+    vwBeetle: "Petrol",
+    volvoP1800: "Petrol",
+  };
+  
+  if (carFuel[carId]) {
+    carFuelElement.innerHTML = carFuel[carId];
+  } else {
+    carFuelElement.innerHTML = "Car Seats not available.";
+  }
+
   const carDescriptions = {
     ferrari250GT:
       "The Ferrari 250 GT Spider stands as a monumental achievement in the history of sports cars, marking a golden era for Ferrari from 1953 to 1964. This iconic vehicle is celebrated for its breathtaking design, which seamlessly blends aesthetic appeal with functional aerodynamics. The heart of the Ferrari 250 GT Spider is its robust V12 engine, a marvel of engineering that delivers unmatched performance and speed. The car's legacy is not only built on its road prowess but also its remarkable success on the race track, where it dominated competitions and left an indelible mark on motorsports history. Collectors and enthusiasts today vie for the convertible models of the 250 GT series, known as the Spider, making it one of the most sought-after classic cars in the world. Its enduring legacy and timeless design continue to captivate the imagination of car lovers everywhere, symbolizing the pinnacle of luxury and performance.<br/><br/>Beyond its technical specifications, the Ferrari 250 GT Spider represents a significant chapter in Ferrari's storied history. It embodies the passion and innovation that have become synonymous with the Ferrari brand, showcasing the craftsmanship and attention to detail that are hallmarks of Italian automotive design. The 250 GT Spider is more than just a car; it is a work of art that exemplifies the spirit of adventure and the pursuit of excellence.",
@@ -108,4 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     carDescriptionElement.innerHTML = "Car description not found.";
   }
+
+  
 });
+
